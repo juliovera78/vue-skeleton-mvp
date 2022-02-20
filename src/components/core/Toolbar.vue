@@ -35,35 +35,6 @@
           <v-icon>{{ item.icon }}</v-icon>
           &nbsp;{{ item.title }}
         </v-btn>
-        <v-list-item class="hidden-sm-and-down">
-          <v-icon>mdi-weather-sunny</v-icon>
-          <v-list-item-action>
-            <v-switch v-model="isDark" inset></v-switch>
-          </v-list-item-action>
-          <v-icon class="pl-2">mdi-weather-night</v-icon>
-        </v-list-item>
-        <v-menu v-if="admin" offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn v-on="on" text class="btnAdmin hidden-sm-and-down">
-              <v-icon>mdi-lock</v-icon>
-              &nbsp;{{ $t('adminItems.ADMIN') }}
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item
-              v-for="(item, index) in adminItems"
-              :key="index"
-              :to="{ name: item.link }"
-              exact
-              :class="[item.class]"
-            >
-              <v-list-item-icon class="mr-2">
-                <v-icon>{{ item.icon }}</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
 
         <v-btn
           text
@@ -125,15 +96,6 @@
           <v-list-item-content>
             {{ $t('menuItems.LOGOUT') }}
           </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-action></v-list-item-action>
-          <v-icon>mdi-weather-sunny</v-icon>
-          <v-list-item-action class="ml-2">
-            <v-switch id="themeSwitcher" v-model="isDark" inset></v-switch>
-          </v-list-item-action>
-          <v-icon>mdi-weather-night</v-icon>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -227,19 +189,19 @@ export default {
             link: 'home',
             icon: 'mdi-home',
             class: 'btnHome'
-          },
-          {
-            title: this.$t('menuItems.ABOUT'),
-            link: 'about',
-            icon: 'mdi-help-circle-outline',
-            class: 'btnAbout'
-          },
-          {
-            title: this.$t('menuItems.MY_PROFILE'),
-            link: 'profile',
-            icon: 'mdi-face',
-            class: 'btnProfile'
           }
+          // {
+          //   title: this.$t('menuItems.ABOUT'),
+          //   link: 'about',
+          //   icon: 'mdi-help-circle-outline',
+          //   class: 'btnAbout'
+          // },
+          // {
+          //   title: this.$t('menuItems.MY_PROFILE'),
+          //   link: 'profile',
+          //   icon: 'mdi-face',
+          //   class: 'btnProfile'
+          // }
         ]
       }
       return [
@@ -253,19 +215,19 @@ export default {
           link: 'about',
           icon: 'mdi-help-circle-outline',
           class: 'btnAbout'
-        },
-        {
-          title: this.$t('menuItems.LOGIN'),
-          link: 'login',
-          icon: 'mdi-lock',
-          class: 'btnLogin'
-        },
-        {
-          title: this.$t('menuItems.SIGNUP'),
-          link: 'signup',
-          icon: 'mdi-plus-circle-outline',
-          class: 'btnLogin'
         }
+        // {
+        //   title: this.$t('menuItems.LOGIN'),
+        //   link: 'login',
+        //   icon: 'mdi-lock',
+        //   class: 'btnLogin'
+        // },
+        // {
+        //   title: this.$t('menuItems.SIGNUP'),
+        //   link: 'signup',
+        //   icon: 'mdi-plus-circle-outline',
+        //   class: 'btnLogin'
+        // }
       ]
     }
   },
